@@ -1,14 +1,31 @@
 <?php
 // session_start();
-// include 'includes/db.php';
-
+// include '../includes/db.php';
 // $connection = connectDatabase();
 
-// if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-//     header('Location: login.php');
-//     exit();
-// }
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
+//     $confirm_password = $_POST['confirm_password'];
 
+//     // Check if passwords match
+//     if ($password !== $confirm_password) {
+//         $errorMessage = "Passwords do not match.";
+//     } else {
+//         // Hash the password before storing it
+//         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+//         // WARNING: This is vulnerable to SQL injection! (Use prepared statements in production)
+//         $query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
+//         if ($connection->query($query) === TRUE) {
+//             // Registration successful, redirect to login page or dashboard
+//             header('Location: login.html');
+//             exit();
+//         } else {
+//             $errorMessage = "Error: " . $connection->error;
+//         }
+//     }
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +33,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign Up</title>
     <style>
-        html,
+       html,
         body {
             margin: 0;
             padding: 0;
@@ -117,42 +135,60 @@
 
         }
 
-        .bottom {
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-top: 30vh;
-        }
-
-        .title-text {
-            margin-bottom: 5%;
-            font-size: 40pt;
-            text-transform: uppercase;
-            margin-top: 5%;
-            text-align: center;
-        }
-
-        .movies-grid {
+        .form-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-bottom: 5%;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
         }
 
-        .elements {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #4d4ae842;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 30vw;
+        }
 
-            padding: 20px;
-            /* Padding for items */
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .button-20 {
+            margin-top: 20px;
+        }
+
+        .form-title {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .error-message {
+            color: #FF4C4C;
+            background-color: rgba(255, 76, 76, 0.1);
+            border: 1px solid #FF4C4C;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
             text-align: center;
-            /* Center text */
-            flex: 1 1 calc(20% - 10px);
-            /* 4 items per row */
-
         }
 
-        .elements>.text {
+        p {
+            text-align: center;
+            margin-top: 15px;
+        }
 
-            font-family: "Quicksand", sans-serif;
-            font-size: 20pt;
+        p a {
+            color: black;
+            text-decoration: underline;
         }
 
         .button-20 {
@@ -179,6 +215,7 @@
             -webkit-user-select: none;
             touch-action: manipulation;
             vertical-align: middle;
+            margin: 5%;
         }
 
         .button-20:focus:not(:focus-visible),
@@ -228,35 +265,34 @@
 </head>
 
 <body>
-    <main>
-        <div class="top">
-            <div class="wrapper">
-                <img class="image-hero" src="../assets/image-hero.jpg"
-                    alt="Description of the hero image">
-                <div class="hero-section">
-                </div>
-                <div class="visible">
-                    <div class="top-bar">
-                        <div class="logo-name">
-                            loopstudios
-                        </div>
-                        <div class="pages-names">
-                            <a href="home.php">
-                                <span>
-                                    Home
-                                </span>
-                            </a>
-                            <a href="movies.php">
-                                <span>
-                                    Movies
-                                </span>
-                            </a>
-                            <a href="contacts.php">
-                                <span>
-                                    Contacts
-                                </span>
-                            </a>
-                            <a href="login.php">
+<div class="top">
+        <div class="wrapper">
+            <img class="image-hero" src="../assets/image-hero.jpg"
+                alt="Description of the hero image">
+            <div class="hero-section">
+            </div>
+            <div class="visible">
+                <div class="top-bar">
+                    <div class="logo-name">
+                        loopstudios
+                    </div>
+                    <div class="pages-names">
+                        <a href="home.html">
+                            <span>
+                                Home
+                            </span>
+                        </a>
+                        <a href="movies.html">
+                            <span>
+                                Movies
+                            </span>
+                        </a>
+                        <a href="contacts.ml">
+                            <span>
+                                Contacts
+                            </span>
+                        </a>
+                        <a href="login.html">
                             <span>
                                 Sign in
                             </span>
@@ -265,74 +301,32 @@
                         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                             <span><a href="admin_dashboard.php">Admin</a></span>
                         <?php endif; ?>
-                        </div>
-                    </div>
-
-                    <div class="hero-text">
-
-                        Reserve Your Seat for the Latest Movies!
-
                     </div>
                 </div>
-            </div>
 
+                <div class="hero-text">
+
+                    Reserve Your Seat for the Latest Movies!
+
+                </div>
+            </div>
         </div>
 
-        <div class="title-text">Our Movies</div>
-        <div class="movies-grid">
-            <div class="elements">
-                <img src="../assets/image-deep-earth.jpg" alt="Deep earth">
-                <div class="text">Deep earth</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-night-arcade.jpg" alt="Night arcade">
-                <div class="text">Night arcade</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-soccer-team.jpg" alt="Soccer team VR">
-                <div class="text">Soccer team VR</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-grid.jpg" alt="The grid">
-                <div class="text">The grid</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-from-above.jpg" alt="From up above VR">
-                <div class="text">From up above VR</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-pocket-borealis.jpg" alt="Pocket borealis">
-                <div class="text">Pocket borealis</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-curiosity.jpg" alt="The curiosity">
-                <div class="text">The curiosity</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-            <div class="elements">
-                <img src="../assets/image-fisheye.jpg" alt="Make it fisheye">
-                <div class="text">Make it fisheye</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
-
-    </main>
+    <div class="form-container">
+        <form method="post" action="">
+            <h2 class="form-title">Sign Up</h2>
+            <?php if (isset($errorMessage)) : ?>
+                <div class="error-message"><?= $errorMessage ?></div>
+            <?php endif; ?>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit" class="button-20">Sign Up</button>
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+        </form>
+    </div>
     <footer>
-        <center> © 2024 Loopstudios. All rights reserved.
-        </center>
+        <p>© 2024 Loopstudios All rights reserved.</p>
     </footer>
 </body>
 
