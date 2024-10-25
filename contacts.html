@@ -17,13 +17,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Frontend Mentor | Loopstudios landing page</title>
+
     <title>Contact Us</title>
     <style>
-        html,
+         html,
         body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            background-color: black;
+            color:white;
         }
 
         a {
@@ -53,6 +71,11 @@
             z-index: 0;
             object-fit: cover;
             display: block;
+            mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 60%,  /* Fully visible at 60% */
+    rgba(0, 0, 0, 0) 100%  /* Fully transparent at the bottom */
+  );
         }
 
         .hero-section {
@@ -116,7 +139,9 @@
             border: 3px solid white;
             width: 30vw;
 
+
         }
+
 
         .contact-form {
             padding: 20px;
@@ -230,7 +255,7 @@
         }
 
 
-        footer {
+         footer {
             height: 100px;
             background-color: black;
             margin-top: 50px;
@@ -238,6 +263,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-top: solid 2px white;
         }
     </style>
 </head>
