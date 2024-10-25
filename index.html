@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Frontend Mentor | Loopstudios landing page</title>
+    <title>Frontend Mentor | cinestream landing page</title>
 
     <style>
         html,
@@ -83,7 +83,7 @@
             position: absolute;
             z-index: 1;
             background-color: black;
-            opacity: 50%;
+            opacity: 60%;
             top: 0;
             left: 0;
             width: 100%;
@@ -147,6 +147,7 @@
             margin: 10em;
             height: auto;
             width: auto;
+            margin-bottom: 15em;
         }
 
         .middle-wrapper {
@@ -157,14 +158,16 @@
 
         .mid-img {
 
-            max-width: 100%;
+            max-width: 60%;
             /* Make the image take up to 100% of its container */
             height: auto;
             /* Maintain the aspect ratio */
             border-top-left-radius: 50px;
+            display: block; 
 border-top-right-radius: 50px;
 border-bottom-left-radius: 50px;
 border-bottom-right-radius: 50px;
+box-shadow: -5px 5px 15px 1px rgba(255, 255, 255, 0.5);
         }
 
         .mid-text {
@@ -186,79 +189,14 @@ border-bottom-right-radius: 50px;
 
         .header {
             font-family: "Quicksand", sans-serif;
-            font-size: 4vw;
+            font-size: 2.5vw;
             text-transform: uppercase;
         }
 
-        .bottom {
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-top: 30vh;
-        }
-
-        .button-20 {
-            appearance: button;
-            background-color: #4D4AE8;
-            background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
-            border: 1px solid #4D4AE8;
-            border-radius: 1rem;
-            box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
-            box-sizing: border-box;
-            color: #FFFFFF;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Inter, sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 1.5;
-            margin: 0;
-            padding: .5rem 1rem;
-            text-align: center;
-            text-transform: none;
-            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            vertical-align: middle;
-            margin: 5%;
-        }
-
-        .button-20:focus:not(:focus-visible),
-        .button-20:focus {
-            outline: 0;
-        }
-
-        .button-20:hover {
-            background-color: #3733E5;
-            border-color: #3733E5;
-        }
-
-        .button-20:focus {
-            background-color: #413FC5;
-            border-color: #3E3BBA;
-            box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
-        }
-
-        .button-20:active {
-            background-color: #3E3BBA;
-            background-image: none;
-            border-color: #3A38AE;
-            box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
-        }
-
-        .button-20:active:focus {
-            box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
-        }
-
-        .button-20:disabled {
-            background-image: none;
-            box-shadow: none;
-            opacity: .65;
-            pointer-events: none;
-        }
+     
 
         footer {
-            height: 100px;
+            height: 10vh;
             background-color: black;
             margin-top: 50px;
             color: white;
@@ -289,7 +227,7 @@ border-bottom-right-radius: 50px;
             <div class="visible">
                 <div class="top-bar">
                     <div class="logo-name">
-                        loopstudios
+                        cinestream
                     </div>
                     <div class="pages-names">
                         <a href="index.html">
@@ -331,26 +269,22 @@ border-bottom-right-radius: 50px;
 
     <div class="middle">
         <div class="middle-wrapper">
-            <img class="mid-img" src="assets/image-interactive.jpg" alt="">
+            <img class="mid-img" src="assets/mid-image.jpg" alt="">
             <div class="mid-text">
-                <div class="header">The leader in interactive VR</div>
-
-                Founded in 2011, Loopstudios has been producing world-class virtual reality
-                projects for some of the best companies around the globe. Our award-winning
-                creations have transformed businesses through digital experiences that bind
-                to their brand.
+                <div class="header">The ultimate movie experience</div>
+                Founded in 2024, CineStream makes discovering and booking 
+                movie tickets effortless. Dive into the latest blockbusters, 
+                reserve your seats, and enjoy the magic of cinema with ease.
             </div>
 
 
         </div>
     </div>
     <div class="bottom">
-        <a href="movies.html">
-            <center><button class="button-20"> See All Movies</button></center>
-        </a>
+      
     </div>
     <footer>
-        <center> © 2024 Loopstudios. All rights reserved.
+        <center> © 2024 cinestream. All rights reserved.
         </center>
     </footer>
 
