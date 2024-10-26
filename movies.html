@@ -34,13 +34,13 @@
 
     <title>Document</title>
     <style>
-         html,
+        html,
         body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             background-color: black;
-            color:white;
+            color: white;
         }
 
         a {
@@ -70,11 +70,12 @@
             z-index: 0;
             object-fit: cover;
             display: block;
-            mask-image: linear-gradient(
-    to bottom, 
-    rgba(0, 0, 0, 1) 60%,  /* Fully visible at 60% */
-    rgba(0, 0, 0, 0) 100%  /* Fully transparent at the bottom */
-  );
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 1) 60%,
+                    /* Fully visible at 60% */
+                    rgba(0, 0, 0, 0) 100%
+                    /* Fully transparent at the bottom */
+                );
         }
 
         .hero-section {
@@ -130,15 +131,19 @@
 
         .hero-text {
             color: white;
-            margin-left: 10%;
+            margin-left: 10vw;
             margin-top: 5%;
             padding: 0.5em;
             font-family: "Quicksand", sans-serif;
             font-size: 4vw;
             border: 3px solid white;
-            width: 30vw;
+            width: 40vw;
+            font-weight: bold;
 
+        }
 
+        .hero-text p {
+            font-size: 1.5vw;
         }
 
 
@@ -157,9 +162,7 @@
         }
 
         .movies-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+
             margin-bottom: 5%;
         }
 
@@ -169,78 +172,124 @@
             /* Padding for items */
             text-align: center;
             /* Center text */
-            flex: 1 1 calc(20% - 10px);
             /* 4 items per row */
+            border: solid 1px white;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            /* 3 columns */
+            gap: 20px;
+            /* Space between items */
+            width: 80%;
+            /* Width of the grid container */
+            max-width: 1200px;
+            /* Maximum width */
+            background-color: #000000;
+            box-shadow: 0px 0px 15px 3px rgba(255, 255, 255, 0.5);
+            margin-top: 5vw;
+            margin-bottom: 5vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
 
+
+            border-radius: 5px;
         }
 
-        .elements>.text {
+        .elements span>.text {
 
             font-family: "Quicksand", sans-serif;
-            font-size: 20pt;
+            font-size: 3vw;
         }
 
-        .button-20 {
-            appearance: button;
-            background-color: #4D4AE8;
-            background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
-            border: 1px solid #4D4AE8;
-            border-radius: 1rem;
-            box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
+        .elements span:nth-of-type(1)>img {
+            max-width: 100%;
+            /* Responsive image */
+            width: 100vw;
+            height: auto;
+
+            object-fit: cover;
+        }
+
+        .elements span:nth-of-type(2) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .elements span:nth-of-type(3) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .elements p {
+            font-size: 1.5vw;
+            font-family: "Quicksand", sans-serif;
+        }
+
+
+        /* CSS */
+        .button-style {
+            appearance: none;
+            background-color: transparent;
+            border: 2px solid #676767;
+            border-radius: 15px;
             box-sizing: border-box;
-            color: #FFFFFF;
+            color: #ffffff;
             cursor: pointer;
             display: inline-block;
-            font-family: Inter, sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 1.5;
+            font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
             margin: 0;
-            padding: .5rem 1rem;
+            min-height: 60px;
+            min-width: 0;
+            outline: none;
+            padding: 16px 24px;
             text-align: center;
-            text-transform: none;
-            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
-            vertical-align: middle;
+            width: 100%;
+            will-change: transform;
         }
 
-        .button-20:focus:not(:focus-visible),
-        .button-20:focus {
-            outline: 0;
-        }
-
-        .button-20:hover {
-            background-color: #3733E5;
-            border-color: #3733E5;
-        }
-
-        .button-20:focus {
-            background-color: #413FC5;
-            border-color: #3E3BBA;
-            box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
-        }
-
-        .button-20:active {
-            background-color: #3E3BBA;
-            background-image: none;
-            border-color: #3A38AE;
-            box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
-        }
-
-        .button-20:active:focus {
-            box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
-        }
-
-        .button-20:disabled {
-            background-image: none;
-            box-shadow: none;
-            opacity: .65;
+        .button-style:disabled {
             pointer-events: none;
         }
 
-         footer {
+        .button-style:hover {
+            color: #fff;
+            background-color: #1A1A1A;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+
+        .button-style:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 940px) {
+            .button_style {
+                min-width: 196px;
+            }
+
+            .hero-text {
+                width: 50vw;
+
+            }
+
+            .hero-text p {
+                font-size: 2vw;
+            }
+        }
+
+        footer {
             height: 100px;
             background-color: black;
             margin-top: 50px;
@@ -257,8 +306,7 @@
     <main>
         <div class="top">
             <div class="wrapper">
-                <img class="image-hero" src="assets/image-hero-movies.jpg"
-                    alt="Description of the hero image">
+                <img class="image-hero" src="assets/image-hero-movies.jpg" alt="Description of the hero image">
                 <div class="hero-section">
                 </div>
                 <div class="visible">
@@ -283,15 +331,22 @@
                                 </span>
                             </a>
                             <a href="login.html">
-                            <span>
-                                Sign in
-                            </span>
-                        </a>
-                        <!-- Admin link (hidden for regular users) -->
-                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                                <span>
+                                    Sign in
+                                </span>
+                            </a>
+                            <!-- Admin link (hidden for regular users) -->
+                            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                             <span><a href="admin_dashboard.php">Admin</a></span>
-                        <?php endif; ?>
+                            <?php endif; ?>
                         </div>
+                    </div>
+                    <div class="hero-text">
+
+                        Interstellar
+                        <p>The adventures of a group of explorers who make use of a newly discovered wormhole to surpass
+                            the limitations on human space travel and conquer the vast distances involved in an
+                            interstellar voyage.</p>
                     </div>
                 </div>
             </div>
@@ -301,53 +356,113 @@
         <div class="title-text">Our Movies</div>
         <div class="movies-grid">
             <div class="elements">
-                <img src="assets/image-deep-earth.jpg" alt="Deep earth">
-                <div class="text">Deep earth</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
             <div class="elements">
-                <img src="assets/image-night-arcade.jpg" alt="Night arcade">
-                <div class="text">Night arcade</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
             <div class="elements">
-                <img src="assets/image-soccer-team.jpg" alt="Soccer team VR">
-                <div class="text">Soccer team VR</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
             <div class="elements">
-                <img src="assets/image-grid.jpg" alt="The grid">
-                <div class="text">The grid</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
             <div class="elements">
-                <img src="assets/image-from-above.jpg" alt="From up above VR">
-                <div class="text">From up above VR</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
             <div class="elements">
-                <img src="assets/image-pocket-borealis.jpg" alt="Pocket borealis">
-                <div class="text">Pocket borealis</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
             <div class="elements">
-                <img src="assets/image-curiosity.jpg" alt="The curiosity">
-                <div class="text">The curiosity</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
+                <span>
+                    <img src="assets/image-shawshanks-redemption.jpg" alt="The Shawshank Redemption">
+                </span>
+                <span>
+                    <div class="text">The Shawshank Redemption</div>
+                    <p>A banker convicted of uxoricide forms a friendship over a quarter century with a hardened
+                        convict, while maintaining his innocence and trying to remain hopeful through simple compassion.
+                    </p>
+                    <div class="showtimes"></div>
+                </span>
+                <span>
+                    <button class="button-style" role="button">Book Now</button>
+                </span>
             </div>
-            <div class="elements">
-                <img src="assets/image-fisheye.jpg" alt="Make it fisheye">
-                <div class="text">Make it fisheye</div>
-                <p>Short description of the movie.</p>
-                <button class="button-20" role="button">Book now</button>
-            </div>
+            
+        </div>
+
 
     </main>
     <footer>

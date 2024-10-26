@@ -148,20 +148,20 @@ window.addEventListener('scroll', function () {
 
         .hero-text {
             color: white;
-            margin-left: 10%;
+            margin-left: 10vw;
             margin-top: 5%;
             padding: 0.5em;
             font-family: "Quicksand", sans-serif;
             font-size: 4vw;
             border: 3px solid white;
-            width: 30vw;
-
+            width: 40vw;
+            font-weight: bold;
 
         }
 
         .middle {
             position: static;
-            margin: 10em;
+            margin: 10vw;
             height: auto;
             width: auto;
             margin-bottom: 15em;
@@ -192,8 +192,8 @@ box-shadow: -5px 5px 15px 1px rgba(255, 255, 255, 0.5);
 
         .mid-text {
             position: absolute;
-            top: 45%;
-            left: 45%;
+            top: 20vw;
+            left: 35vw;
             background-color: white;
             font-family: "Quicksand", sans-serif;
             font-size: 1.5vw;
@@ -224,6 +224,14 @@ border-bottom-right-radius: 50px;
             align-items: center;
             justify-content: center;
             border-top: solid 2px white;
+        }
+
+        @media (max-width: 940px) {
+            .mid-text {
+            top: 40vw;
+            left: 35vw;
+
+       }
         }
     </style>
 </head>
