@@ -33,7 +33,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Frontend Mentor | cinestream landing page</title>
+    <script>
+          let canScrollDown = true;
 
+window.addEventListener('scroll', function () {
+    // Check if the user scrolls down past 50px and is allowed to auto-scroll to the middle section
+    if (canScrollDown && window.scrollY > 50) {
+        canScrollDown = false; // Prevent re-triggering immediately
+        document.querySelector('.middle').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Reset the scroll behavior when near the top of the page
+    if (window.scrollY < 50) {
+        canScrollDown = true; // Re-enable auto-scroll when near the top
+    }
+});
+    </script>
+    
+    
     <style>
         html,
         body {
@@ -148,12 +165,15 @@
             height: auto;
             width: auto;
             margin-bottom: 15em;
+            margin-bottom:20em;
         }
 
         .middle-wrapper {
+            
             position: relative;
             height: auto;
             width: auto;
+            padding-top: 7em;;
         }
 
         .mid-img {
@@ -220,7 +240,7 @@ border-bottom-right-radius: 50px;
     ?>
     <div class="top">
         <div class="wrapper">
-            <img class="image-hero" src="assets/image-hero.jpg"
+            <img class="image-hero" src="assets/image-hero-home.jpg"
                 alt="Description of the hero image">
             <div class="hero-section">
             </div>

@@ -57,6 +57,8 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            overflow-y: hidden;
+
             background-color: black;
             color:white;
         }
@@ -90,7 +92,7 @@
             display: block;
             mask-image: linear-gradient(
     to bottom, 
-    rgba(0, 0, 0, 1) 60%,  /* Fully visible at 60% */
+    rgba(0, 0, 0, 1) 50%,  /* Fully visible at 60% */
     rgba(0, 0, 0, 0) 100%  /* Fully transparent at the bottom */
   );
         }
@@ -100,7 +102,7 @@
             position: absolute;
             z-index: 1;
             background-color: black;
-            opacity: 60%;
+            opacity: 0%;
             top: 0;
             left: 0;
             width: 100%;
@@ -173,10 +175,12 @@
             justify-content: center;
             align-items: center;
             background-color: #4d4ae842;
-            padding: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+
             border-radius: 8px;
             width: 30vw;
-            box-shadow: 0px 0px 15px 3px rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
 
 border-radius: 5px;
         }
@@ -203,13 +207,13 @@ border-radius: 5px;
             border: 1px solid #FF4C4C;
             padding: 10px;
             border-radius: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             text-align: center;
         }
 
         p {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         p a {
@@ -239,7 +243,7 @@ border-radius: 5px;
         touch-action: manipulation;
         white-space: nowrap;
         cursor: pointer;
-        margin:40px;
+        margin:30px;
         }
 
         .button_style:active,
@@ -266,23 +270,13 @@ border-radius: 5px;
         }
         }
 
-         footer {
-            height: 100px;
-            background-color: black;
-            margin-top: 50px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-top: solid 2px white;
-        }
     </style>
 </head>
 
 <body>
-<div class="top">
+    <div class="top">
         <div class="wrapper">
-            <img class="image-hero" src="assets/image-hero.jpg"
+            <img class="image-hero" src="assets/image-interactive22.jpg"
                 alt="Description of the hero image">
             <div class="hero-section">
             </div>
@@ -319,33 +313,27 @@ border-radius: 5px;
                     </div>
                 </div>
 
-                <div class="hero-text">
-
-                    Reserve Your Seat for the Latest Movies!
-
-                </div>
+    
             </div>
         </div>
 
     <div class="form-container">
         <form method="post" action="">
             <h2 class="form-title">Sign Up</h2>
-            <?php if (isset($errorMessage)) : ?>
-                <div class="error-message"><?= $errorMessage ?></div>
-            <?php endif; ?>
+          
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="confirm_password" placeholder="Confirm Password" required>
             <center>
        
                 <button class="button_style" role="button"><span class="text">Sign Up</span></button>
-                </center>
+                </center>  <?php if (isset($errorMessage)) : ?>
+                <div class="error-message"><?= $errorMessage ?></div>
+            <?php endif; ?>
             <p>Already have an account? <a href="login.html">Log in</a></p>
         </form>
     </div>
-    <footer>
-        <p>© 2024 cinestream All rights reserved.</p>
-    </footer>
+   
 </body>
 
 </html>
